@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Pokemon Matcher</title>
     <link href="matchgamestyle.css" rel="stylesheet">
     <script src="matchgamescript.js" async></script>
@@ -13,6 +14,12 @@
         <img id="title" src="images/title.png">
     </div>
     <div id="generalContainer">
+        <div id="instructionsContainer">
+            <label>Instructions</label>
+            <div id="description">
+                <p>Pokemon Matcher is an intense, competitive game where you are revealing pokemons in a desperate search for two that match. As you find matches, those images will be revealed, but watch out! The computer is keeping track of the number of times you click and judging your every move.</p>
+            </div>
+        </div>
         <div id="cardContainer">
             <div class="cards">
                 <div class="cardsInner">
@@ -175,8 +182,13 @@
                 </div>
             </div>
         </div>
-        <div id="scoreContainer">
+        <div id="lastContainer">
             <label>Score</label>
+            <div id="scoreContainer">
+                <div id="hundredsPlace"></div>
+                <div id="tensPlace"></div>
+                <div id="onesPlace"></div>
+            </div>
             <button>Reset</button>
         </div>
     </div>

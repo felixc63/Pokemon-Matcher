@@ -13,31 +13,74 @@ body{
 }
 
 #generalContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#instructionsContainer, #lastContainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#scoreContainer{
+    display: flex;
+}
+
+#hundredsPlace, #tensPlace, #onesPlace{
+    width: 150px;
+    height: 300px;
+    color: white;
+    font-size: 300px;
+    text-align: center;
+}
+
+#hundredsPlace{
+    background-color: #3a3a3a;
+}
+
+#tensPlace{
+    background-color: #838383;
+}
+
+#onesPlace{
+    background-color: #aeaeae;
+}
+
+#description{
+    border: 3px solid white;
+    border-radius: 15px;
+    
 }
 
 #cardContainer{
     display: grid;
     text-align: center;
-    grid-template-columns: 175px 175px 175px 175px;
-    grid-template-rows: 225px 225px 225px 225px;
-    margin-top: 2px;
+    grid-template-columns: 170px 170px 170px 170px;
+    grid-template-rows: 212.5px 212.5px 212.5px 212.5px;
 }
 
 .frontCards, .backCards{
-    width: 150px;
+    width: 140px;
 }
 
 #title{
     width: 25%;
 }
 
-label{
-    font-family: Helvetica, sans-serif;
-    font-size: 200%;
+p, label{
+    font-family: "Poppins";
     color: white;
+}
+
+p{
+    font-size: 125%;
+}
+
+label{
+    font-size: 200%;
 }
 
 img{
@@ -77,4 +120,24 @@ img{
 
 .back{
     transform: rotateY(180deg);
+}
+
+button{
+    color: #356abc;
+    font-weight: bold;
+    background: #ffcc03;
+    border: 1px solid #356abc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    box-shadow: rgba(53, 106, 188, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    margin-top: 2%;
+}
+
+button:hover{
+    box-shadow: rgba(53, 106, 188, .15) 0 3px 9px 0;
+    transform: translateY(-2px) scale(1.01);
 }
