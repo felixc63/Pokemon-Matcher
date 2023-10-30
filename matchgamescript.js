@@ -1,7 +1,4 @@
 const cards = document.getElementsByClassName("cards");
-const front = document.getElementsByClassName("front");
-const back = document.getElementsByClassName("back");
-const frontCards = document.getElementsByClassName("frontCards");
 const backCards = document.getElementsByClassName("backCards");
 const hundredsPlace = document.getElementById("hundredsPlace");
 const tensPlace = document.getElementById("tensPlace");
@@ -46,9 +43,6 @@ function load(){
             pokemonPairsSet.push(`${randomNum1+1} and ${randomNum2+1}`);
         }
     }
-    //Answers; Delete when done
-    console.log(pokemons);
-    console.log(pokemonPairsSet);
 }
 
 function reset(){
@@ -70,7 +64,6 @@ function reset(){
 }
 
 function updateCard(idx){
-    console.log(idx);
     cards[idx].classList.toggle("flip");
     cards[idx].onclick = null;
     if(firstCardIdx == -1){
@@ -90,12 +83,18 @@ function updateCard(idx){
             cardIdxsRevealed.push(secondCardIdx);
         }
         setTimeout(() => {
+            let cardsRevealed = 0;
             for(let i = 0; i < cards.length; i++){
                 if(cardIdxsRevealed.indexOf(i) == -1){
                     cards[i].onclick = function(){
                         updateCard(i);
                     }
+                }else{
+                    cardsRevealed++;
                 }
+            }
+            if(cardsRevealed == cards.length){
+                alert(`You won with a score of ${score}! Press reset to restart!`);
             }
             firstCardIdx = -1;
             secondCardIdx = -1;
